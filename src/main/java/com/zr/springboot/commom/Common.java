@@ -98,11 +98,8 @@ public class Common {
                 }
 
                 for (WebSocket webSocket:webSocketSet){
-                    try {
-                        webSocket.getSession().getBasicRemote().sendText(massages.toString());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        webSocket.sendMessage(massages.toString());
+
                 }
 
                 consumer.commitSync();

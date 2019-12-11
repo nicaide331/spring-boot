@@ -19,7 +19,6 @@ public class KafkaResource extends BaseResource{
         Integer key = 0;
         String value = "value";
         kafkaService.sendMassage(key, value);
-
         return true;
     }
 }
