@@ -83,6 +83,13 @@ public class Common {
         return new KafkaConsumer<>(getConsumerProperties(GROUP));
     }
 
+    /**
+     * 启动消费者
+     * @param consumer 消费者
+     * @param webSocketSet
+     * @param topic 主题
+     * @param partition 分区
+     */
     public static void startConsumer(KafkaConsumer<Integer, String> consumer, CopyOnWriteArraySet<WebSocket> webSocketSet, String topic, int partition) {
 
         TopicPartition p = new TopicPartition(topic,partition);
@@ -90,18 +97,22 @@ public class Common {
 
         try {
             while (true) {
+                //获取生产消费的信息
                 ConsumerRecords<Integer, String> records = consumer.poll(Long.MAX_VALUE);
+
+                //将消息加到StringBuffer
                 StringBuffer massages = new StringBuffer();
                 for (ConsumerRecord<Integer, String> record : records){
                     massages.append(record.value());
                     massages.append(".");
                 }
 
+                //发送Message
                 for (WebSocket webSocket:webSocketSet){
                         webSocket.sendMessage(massages.toString());
-
                 }
 
+                //消费者提交位移
                 consumer.commitSync();
             }
         } catch (WakeupException e) {

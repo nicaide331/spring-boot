@@ -45,7 +45,7 @@
 		function send() {
 			var message = document.getElementById('name').value;
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "http://127.0.0.1:8444/massages", true);
+			xhr.open("POST", "http://127.0.0.1:8444/kafka/massages", true);
             //发送合适的请求头信息
 			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 

@@ -41,7 +41,7 @@ public class WebSocket {
     @OnOpen
     public void onOpen(Session session){
         this.session=session;
-        webSocketSet.add(this);
+         webSocketSet.add(this);
         log.info("【websocket消息】 有新的连接，总数{}",webSocketSet.size());
     }
 

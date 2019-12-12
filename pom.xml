@@ -50,6 +50,27 @@
             <artifactId>spring-websocket</artifactId>
             <version>5.2.2.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.1.4.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zr.detection</groupId>
+            <artifactId>com_zr_commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zr.detection</groupId>
+            <artifactId>com_zr_commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zr.detection</groupId>
+            <artifactId>com_zr_commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
